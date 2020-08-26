@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="ColorsManager.Controls.ControlColorCell"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:local="clr-namespace:ColorsManager.Controls"
+			 mc:Ignorable="d"
+			 d:DesignHeight="100"
+			 d:DesignWidth="450"
+			 BorderBrush="LightGray"
+			 BorderThickness="1">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.Resources>
+			<Style TargetType="TextBlock">
+				<Setter Property="Background"
+						Value="{x:Null}" />
+				<Setter Property="Foreground"
+						Value="Black" />
+				<Setter Property="FontSize"
+						Value="14" />
+				<Setter Property="TextAlignment"
+						Value="Center" />
+				<Setter Property="VerticalAlignment"
+						Value="Center" />
+				<Setter Property="HorizontalAlignment"
+						Value="Center" />
+				<Setter Property="TextWrapping"
+						Value="NoWrap" />
+			</Style>
+		</Grid.Resources>
+		<Grid.ContextMenu>
+			<ContextMenu>
+				<MenuItem Header="Delete"
+						  x:Name="MenuItemDelete" />
+			</ContextMenu>
+		</Grid.ContextMenu>
+		<Button Grid.Column="0"
+				Grid.ColumnSpan="3"
+				Background="DarkSlateGray"
+				BorderBrush="{x:Null}"
+				x:Name="ButtonSelect" />
+		<Rectangle Fill="White"
+		           Margin="20,3,20,3"
+		           Grid.ColumnSpan="3"
+		           Grid.Column="0"
+		           x:Name="RectangleColorBack" />
+		<TextBlock x:Name="TextBlockHex"
+		           Margin="20,0,0,0"
+		           Grid.Column="0"
+		           Text="#AAAAA" />
+		<TextBlock x:Name="TextBlockRGBA"
+				   Grid.Column="1"
+				   Text="255,255,255,255" />
+		<TextBox x:Name="TextBoxText"
+				 Margin="0,0,20,0"
+				 Grid.Column="2"
+				 Text="TEXT"
+				 Foreground="Black"
+				 Background="{x:Null}"
+				 FontSize="14"
+				 BorderBrush="{x:Null}"
+				 BorderThickness="0"
+				 TextAlignment="Center"
+				 VerticalAlignment="Center"
+				 TextWrapping="WrapWithOverflow" />
+
+		<Popup x:Name="PopupBuffer"
+			   Grid.Column="2"
+			   StaysOpen="False"
+			   Placement="Mouse"
+			   AllowsTransparency="True">
+			<TextBlock TextWrapping="Wrap"
+					   Width="60"
+					   Background="Aqua"
+					   Opacity="0.8">
+				Copy
+			</TextBlock>
+		</Popup>
+	</Grid>
+</UserControl>
